@@ -1,53 +1,38 @@
 package tests;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import org.junit.Assert;
-import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 
 import pages.HomePage;
 
 public class HomePageTest extends TestTemplateClass{
 	
-	@Test
-	public void homePageUrlTest() {
-		this.driver.navigate().to(this.locators.getProperty("url"));
-		String pageUrl = this.driver.findElement(By.xpath(this.selectors.getProperty("url"))).getText();
-		
-		verifyURLStatus("pageUrl");
-		
-		Assert.assertTrue(pageUrl.contains("bootcamp-osnazivanje"));
-	}
+	
 	
 	@Test
-	public void homePageTest() {
+	public void homePageTest() throws InterruptedException {
 
 		this.driver.navigate().to(this.locators.getProperty("url"));
+		Alert alert = this.driver.switchTo().alert();
+		alert.accept();
 		
 		HomePage homePage = new HomePage(driver, selectors, locators, waiter);
 		
+		homePage.getUserField().click();
 		homePage.enterUser();
-		homePage.chooseCategory();
-		homePage.enterTerm();
-	}
-	
-	//verifying url status of a page
-		public static int verifyURLStatus(String urlString) {
-			int status = 404;
-			try {                         
-				URL link = new URL(urlString);
-				HttpURLConnection hConn = null;
-				hConn = (HttpURLConnection) link.openConnection();
-				hConn.setRequestMethod("GET");
-				hConn.connect();
-				status = hConn.getResponseCode();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return status;
+		
+		String pageUrl = this.driver.getCurrentUrl();
+		
+		boolean isLogedIn = false;
+		
+		if(pageUrl.contains("username=")) {
+			isLogedIn = true;
 		}
-
+		
+		Assert.assertTrue(isLogedIn);
+	}
 }
+	
+	
+	

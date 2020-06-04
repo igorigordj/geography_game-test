@@ -1,9 +1,10 @@
 package pages;
 
+
 import java.util.List;
 import java.util.Properties;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,11 +17,11 @@ public class HomePage extends AttributesClass{
 	
 	public WebElement getUserField() {
 		return this.driver.findElement(By.xpath(selectors.getProperty("enterUserField")));
-		
 	}
-	
+		
 	public void enterUser() {
 		this.getUserField().sendKeys("igi");
+		this.getUserField().sendKeys(Keys.ENTER);
 	}
 	
 	public List<WebElement> getCategoryField() {
@@ -30,6 +31,7 @@ public class HomePage extends AttributesClass{
 	public void chooseCategory() {
 		for(int i=0; i< getCategoryField().size(); i++) {
 			WebElement category = this. getCategoryField().get(i);
+			category.click();
 		}
 	}
 	
