@@ -9,9 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage extends AttributesClass{
+public class LogInPage extends AttributesClass{
 
-	public HomePage(WebDriver driver, Properties selectors, Properties locators, WebDriverWait waiter) {
+	public LogInPage(WebDriver driver, Properties selectors, Properties locators, WebDriverWait waiter) {
 		super(driver, selectors, locators, waiter);
 	}
 	

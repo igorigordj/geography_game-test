@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 
-import pages.HomePage;
+import pages.LogInPage;
 
-public class HomePageTest extends TestTemplateClass{
+public class LogInTest extends TestTemplateClass{
 	
 	
 	
@@ -17,10 +17,10 @@ public class HomePageTest extends TestTemplateClass{
 		Alert alert = this.driver.switchTo().alert();
 		alert.accept();
 		
-		HomePage homePage = new HomePage(driver, selectors, locators, waiter);
+		LogInPage logInPage = new LogInPage(driver, selectors, locators, waiter);
 		
-		homePage.getUserField().click();
-		homePage.enterUser();
+		logInPage.getUserField().click();
+		logInPage.enterUser();
 		
 		String pageUrl = this.driver.getCurrentUrl();
 		
