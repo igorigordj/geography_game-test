@@ -11,7 +11,7 @@ public class LogInTest extends TestTemplateClass{
 	
 	
 	@Test
-	public void homePageTest() throws InterruptedException {
+	public void logInTest() throws InterruptedException {
 
 		this.driver.navigate().to(this.locators.getProperty("url"));
 		Alert alert = this.driver.switchTo().alert();
