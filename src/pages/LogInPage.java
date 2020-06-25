@@ -13,6 +13,9 @@ public class LogInPage extends AttributesClass{
 		super(driver, selectors, locators, waiter);
 	}
 	
+	public WebElement getHomePageLink() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("zanimljivaGeografija")));
+	}
 	public WebElement getUserField() {
 		return this.driver.findElement(By.xpath(selectors.getProperty("enterUserField")));
 	}

@@ -1,7 +1,8 @@
 package tests;
 
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import pages.LogInPage;
@@ -14,19 +15,18 @@ public class LogInTest extends TestTemplateClass{
 	public void logInTest() throws InterruptedException {
 
 		this.driver.navigate().to(this.locators.getProperty("url"));
-		Alert alert = this.driver.switchTo().alert();
-		alert.accept();
 		
 		LogInPage logInPage = new LogInPage(driver, selectors, locators, waiter);
 		
+		logInPage.getHomePageLink().click();
 		logInPage.getUserField().click();
 		logInPage.enterUser();
 		
-		String pageUrl = this.driver.getCurrentUrl();
+		WebElement helloMsg = this.driver.findElement(By.xpath(selectors.getProperty("helloMsg")));
 		
 		boolean isLogedIn = false;
 		
-		if(pageUrl.contains("username=")) {
+		if(helloMsg.isDisplayed()) {
 			isLogedIn = true;
 		}
 		
