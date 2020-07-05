@@ -1,6 +1,5 @@
 package pages;
 
-import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -14,12 +13,12 @@ public class PlayVsComPage extends AttributesClass{
 		super(driver, selectors, locators, waiter);		
 	}
 	
-	public List<WebElement> playVsComLink() {
-		return this.driver.findElements(By.xpath(selectors.getProperty("playVsCom")));
+	public WebElement playVsComLink() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("playVsCom")));
 	}
 	
-	public List<WebElement> getStartBtn() {
-		return this.driver.findElements(By.xpath(selectors.getProperty("startBtn")));
+	public WebElement getStartBtn() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("startBtn")));
 	}
 
 }

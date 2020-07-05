@@ -26,10 +26,9 @@ public class ChooseCategoryPage extends AttributesClass{
 		
 		System.out.println(randNum);
 				
-		//for(int i=0; i< getCategoryField().size(); i++) {
 			WebElement category = this. getCategoryField().get(randNum);
 			category.click();
-		//}
+		
 	}
 	
 	public WebElement getEnterTermField() {
