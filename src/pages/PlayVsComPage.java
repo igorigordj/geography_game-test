@@ -20,5 +20,33 @@ public class PlayVsComPage extends AttributesClass{
 	public WebElement getStartBtn() {
 		return this.driver.findElement(By.xpath(selectors.getProperty("startBtn")));
 	}
+	
+	public WebElement getState() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("state")));
+	}
+	
+	public WebElement getCity() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("city")));
+	}
+	
+	public WebElement getRiver() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("river")));
+	}
+	
+	public WebElement getMountain() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("mountain")));
+	}
+	
+	public WebElement getAnimal() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("animal")));
+	}
+	
+	public WebElement getPlant() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("plant")));
+	}
+	
+	public WebElement getThing() {
+		return this.driver.findElement(By.xpath(selectors.getProperty("thing")));
+	}
 
 }
