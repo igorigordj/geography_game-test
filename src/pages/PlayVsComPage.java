@@ -48,5 +48,9 @@ public class PlayVsComPage extends AttributesClass{
 	public WebElement getThing() {
 		return this.driver.findElement(By.xpath(selectors.getProperty("thing")));
 	}
+	
+	public WebElement getLetter () {
+		return this.driver.findElement(By.xpath(selectors.getProperty("letter")));
+	}
 
 }
