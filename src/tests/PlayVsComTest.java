@@ -15,5 +15,8 @@ public class PlayVsComTest extends TestTemplateClass{
 		
 		pvc.playVsComLink().click();
 		pvc.getStartBtn().click();
+		
 	}
+	
+	
 }
